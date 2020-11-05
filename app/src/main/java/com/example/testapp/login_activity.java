@@ -30,12 +30,13 @@ public class login_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
 
-        mEmail = findViewById(R.id.gmail_id);
+        mEmail = findViewById(R.id.username);
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar2);
+        progressBar.setVisibility(View.INVISIBLE);
         fAuth = FirebaseAuth.getInstance();
         mLogbtn = findViewById(R.id.log_but);
-
+        mCreatebtn=findViewById(R.id.to_reg);
         mLogbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,9 +55,16 @@ public class login_activity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {
                             Toast.makeText(login_activity.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.INVISIBLE);
                         }
                     }
                 });
+            }
+        });
+        mCreatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), Register.class));
             }
         });
     }
