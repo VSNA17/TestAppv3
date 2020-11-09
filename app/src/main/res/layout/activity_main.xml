@@ -29,4 +29,32 @@
         app:layout_constraintVertical_bias="0.107"
         android:onClick="logout"/>
 
+    <TextView
+        android:id="@+id/verifyMsg"
+        android:layout_width="187dp"
+        android:layout_height="28dp"
+        android:text="Email Not Verified"
+        android:textColor="#FF0000"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.048"
+        tools:visibility="invisible" />
+
+    <Button
+        android:id="@+id/resendCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Now"
+        android:textColor="#FF0101"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/verifyMsg"
+        app:layout_constraintVertical_bias="0.045"
+        tools:visibility="invisible" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
