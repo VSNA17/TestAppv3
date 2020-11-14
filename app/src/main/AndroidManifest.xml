@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApp">
-        <activity android:name=".login_activity"></activity>
+        <activity android:name=".Stationery"
+            android:parentActivityName=".Inventory"/>
+        <activity android:name=".Appliances"
+            android:parentActivityName=".Inventory"/>
+        <activity android:name=".Groceries"
+            android:parentActivityName=".Inventory"/>
+        <activity android:name=".Inventory" />
+        <activity android:name=".NewItemFurniture"
+            android:parentActivityName=".Furniture" />
+        <activity android:name=".Furniture"
+            android:parentActivityName=".Inventory"/>
+        <activity android:name=".login_activity" />
         <activity android:name=".Register">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     Button resendCode2;
+    Button devedit;
     Button resetPassLocal,changeProfileImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
         resendCode2=findViewById(R.id.resendCode);
+        devedit=findViewById(R.id.devedit);
+        devedit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jumptoside();
+            }
+        });
         verifyMsg2=findViewById(R.id.verifyMsg);
         userId=fAuth.getCurrentUser().getUid();
         final FirebaseUser user=fAuth.getCurrentUser();
@@ -64,5 +72,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();//LOGOUT
         startActivity(new Intent(getApplicationContext(),login_activity.class));
         finish();
+    }
+    public void jumptoside(){
+        Intent intent = new Intent(MainActivity.this,Inventory.class);
+        startActivity(intent);
     }
 }

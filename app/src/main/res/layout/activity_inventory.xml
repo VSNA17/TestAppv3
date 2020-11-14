@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home"
+    tools:context=".MainActivity">
+
+
+    <ImageButton
+        android:id="@+id/Groceries"
+        android:src="@drawable/groceries"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <ImageButton
+        android:id="@+id/Appliances"
+        android:src="@drawable/appliances"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.31" />
+
+    <ImageButton
+        android:id="@+id/Stationery"
+        android:src="@drawable/stationery"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <ImageButton
+        android:id="@+id/Furniture"
+        android:src="@drawable/furniture"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.62" />
+
+    <TextView
+        android:id="@+id/Disp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select a category:"
+        android:fontFamily="@font/amaranth_bold"
+        android:textColor="#000000"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.15" />
+
+    <TextView
+        android:id="@+id/Gro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Groceries"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.265"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Groceries"
+        app:layout_constraintVertical_bias="0.465" />
+
+    <TextView
+        android:id="@+id/Apl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appliances"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Appliances"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".465" />
+
+    <TextView
+        android:id="@+id/Sta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stationery"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Appliances"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".735" />
+    <TextView
+        android:id="@+id/Fur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Furniture"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Appliances"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".735" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16sp"
+    android:background="@drawable/home"
+    tools:context=".NewItemFurniture">
+
+    <TextView
+        android:id="@+id/nametext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter name for new Item:"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/nameedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter here"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+    <TextView
+        android:id="@+id/initqtytext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter initial quantity:"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/initqtyedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter here"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+</LinearLayout>

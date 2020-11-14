@@ -57,4 +57,14 @@
         app:layout_constraintVertical_bias="0.045"
         tools:visibility="invisible" />
 
+    <Button
+        android:id="@+id/devedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Jump to activity (Dev purposes)"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713"
+        tools:layout_editor_absoluteX="0dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
