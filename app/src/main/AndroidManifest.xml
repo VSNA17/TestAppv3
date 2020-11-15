@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testapp">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,17 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApp">
-        <activity android:name=".Stationery"
-            android:parentActivityName=".Inventory"/>
-        <activity android:name=".Appliances"
-            android:parentActivityName=".Inventory"/>
-        <activity android:name=".Groceries"
-            android:parentActivityName=".Inventory"/>
+        <activity
+            android:name=".Stationery"
+            android:parentActivityName=".Inventory" />
+        <activity
+            android:name=".Appliances"
+            android:parentActivityName=".Inventory" />
+        <activity
+            android:name=".Groceries"
+            android:parentActivityName=".Inventory" />
         <activity android:name=".Inventory" />
-        <activity android:name=".NewItemFurniture"
+        <activity
+            android:name=".NewItemFurniture"
             android:parentActivityName=".Furniture" />
-        <activity android:name=".Furniture"
-            android:parentActivityName=".Inventory"/>
+        <activity
+            android:name=".Furniture"
+            android:parentActivityName=".Inventory" />
         <activity android:name=".login_activity" />
         <activity android:name=".Register">
             <intent-filter>

@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:padding="9sp"
-        android:layout_marginBottom="45sp"
         android:background="@drawable/home">
 
     </androidx.recyclerview.widget.RecyclerView>

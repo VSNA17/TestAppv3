@@ -1,5 +1,7 @@
 package com.example.testapp;
 
+import android.net.Uri;
+
 public class Set_item {
     private int imgres;
     private String Title;

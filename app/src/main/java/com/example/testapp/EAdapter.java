@@ -1,4 +1,5 @@
 package com.example.testapp;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHolder> {
-
 
     public EAdapter(@NonNull FirestoreRecyclerOptions<Set_item> options) {
         super(options);
@@ -45,12 +48,20 @@ public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHo
                     deleteitem(getAdapterPosition());
                 }
             });
+            update.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String str = quantityedit.getText().toString();
+                    editinitqty(str,getAdapterPosition());
+                }
+            });
+
         }
     }
 
     @Override
     public EViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item,parent,false);
         return new EViewHolder(v);
     }
 
@@ -59,10 +70,15 @@ public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHo
         holder.text.setText(model.getTitle());
         holder.quantity.setText(model.getQty());
         holder.initial.setText(model.getInitqty());
+        holder.image.setImageResource(model.getImgres());
     }
 
     public void deleteitem(int position){
         getSnapshots().getSnapshot(position).getReference().delete();
+    }
+
+    public void editinitqty(String str,int position){
+        getSnapshots().getSnapshot(position).getReference().update("initqty",str);
     }
 
 }
