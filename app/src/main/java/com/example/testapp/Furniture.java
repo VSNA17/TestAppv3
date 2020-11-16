@@ -24,6 +24,7 @@ public class Furniture extends AppCompatActivity{
     private FirebaseAuth fAuth;
     private EAdapter adapter;
     private FloatingActionButton savebutton;
+    private String asd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class Furniture extends AppCompatActivity{
         getSupportActionBar().setTitle("Furniture");
 
         fAuth = FirebaseAuth.getInstance();
-        savebutton = findViewById(R.id.add_item);
+        savebutton = findViewById(R.id.add_item_fur);
         savebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ public class Furniture extends AppCompatActivity{
 
     private void buildrecyclerview(){
 
-        String asd = fAuth.getCurrentUser().getUid();
+        asd = fAuth.getCurrentUser().getUid();
         Query query = furnRef.document(asd).collection("furRef");
         FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
         adapter = new EAdapter(options);

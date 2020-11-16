@@ -12,11 +12,12 @@ public class Inventory extends AppCompatActivity {
     private ImageButton app;
     private ImageButton sta;
     private ImageButton fur;
+    private ImageButton oth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
-        getSupportActionBar().setTitle("Home maker");
+        getSupportActionBar().setTitle("Inventory");
         gro = (ImageButton) findViewById(R.id.Groceries);
         gro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,13 @@ public class Inventory extends AppCompatActivity {
                 openfur();
             }
         });
+        oth = findViewById(R.id.Others);
+        oth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openoth();
+            }
+        });
     }
     public void opengro(){
         Intent intent = new Intent(this, Groceries.class);
@@ -60,6 +68,10 @@ public class Inventory extends AppCompatActivity {
     }
     public void openfur(){
         Intent intent = new Intent(this, Furniture.class);
+        startActivity(intent);
+    }
+    public void openoth(){
+        Intent intent = new Intent(this,Others.class);
         startActivity(intent);
     }
 }

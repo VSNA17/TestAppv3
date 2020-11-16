@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.testapp">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApp">
+        <activity
+            android:name=".NewItemOthersGroceries"
+            android:parentActivityName=".Others_Groceries"/>
+        <activity
+            android:name=".NewItemUtensils"
+            android:parentActivityName=".Utensils"/>
+        <activity
+            android:name=".NewItemCleaning"
+            android:parentActivityName=".Cleaning"/>
+        <activity
+            android:name=".NewItemBabycare"
+            android:parentActivityName=".Babycare"/>
+        <activity
+            android:name=".NewItemCosmetics"
+            android:parentActivityName=".Cosmetics"/>
+        <activity
+            android:name=".NewItemFood"
+            android:parentActivityName=".Food"/>
+        <activity
+            android:name=".Utensils"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".Others_Groceries"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".Cleaning"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".Babycare"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".Cosmetics"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".Food"
+            android:parentActivityName=".Groceries" />
+        <activity
+            android:name=".NewItemOthers"
+            android:parentActivityName=".Others" />
+        <activity
+            android:name=".NewItemStationery"
+            android:parentActivityName=".Stationery" />
+        <activity
+            android:name=".NewItemAppliance"
+            android:parentActivityName=".Appliances" />
+        <activity
+            android:name=".NewItemFurniture"
+            android:parentActivityName=".Furniture" />
         <activity
             android:name=".Stationery"
             android:parentActivityName=".Inventory" />
@@ -20,10 +70,10 @@
             android:parentActivityName=".Inventory" />
         <activity android:name=".Inventory" />
         <activity
-            android:name=".NewItemFurniture"
-            android:parentActivityName=".Furniture" />
-        <activity
             android:name=".Furniture"
+            android:parentActivityName=".Inventory" />
+        <activity
+            android:name=".Others"
             android:parentActivityName=".Inventory" />
         <activity android:name=".login_activity" />
         <activity android:name=".Register">

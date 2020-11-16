@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class NewItemFurniture extends AppCompatActivity {
+public class NewItemUtensils extends AppCompatActivity {
 
     private EditText nameedit;
     private EditText initqtyedit;
@@ -95,8 +95,8 @@ public class NewItemFurniture extends AppCompatActivity {
         }
 
         a = fAAuth.getCurrentUser().getUid();
-        CollectionReference dbfurRef = FirebaseFirestore.getInstance().collection("users");
-        dbfurRef.document(a).collection("furRef").add(new Set_item(R.drawable.furniture,title,"Quantity available:",initialquantity));
+        CollectionReference dbutsRef = FirebaseFirestore.getInstance().collection("users");
+        dbutsRef.document(a).collection("utsRef").add(new Set_item(R.drawable.cutlery,title,"Quantity available:",initialquantity));
         Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
         finish();
     }

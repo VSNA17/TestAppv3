@@ -18,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <ImageButton
         android:id="@+id/Appliances"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.31" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <ImageButton
         android:id="@+id/Stationery"
@@ -42,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <ImageButton
         android:id="@+id/Furniture"
@@ -54,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/Disp"
@@ -69,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.09" />
 
     <TextView
         android:id="@+id/Gro"
@@ -84,7 +84,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Groceries"
-        app:layout_constraintVertical_bias="0.465" />
+        app:layout_constraintVertical_bias="0.405" />
 
     <TextView
         android:id="@+id/Apl"
@@ -99,7 +99,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Appliances"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".465" />
+        app:layout_constraintVertical_bias=".405" />
 
     <TextView
         android:id="@+id/Sta"
@@ -114,7 +114,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Appliances"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".735" />
+        app:layout_constraintVertical_bias=".685" />
     <TextView
         android:id="@+id/Fur"
         android:layout_width="wrap_content"
@@ -128,8 +128,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Appliances"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias=".735" />
+        app:layout_constraintVertical_bias=".685" />
 
+    <ImageButton
+        android:id="@+id/Others"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:src="@drawable/shopping"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.87" />
+
+    <TextView
+        android:id="@+id/Oth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Others"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="24sp"
+        app:layout_constraintVertical_bias="0.96" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
