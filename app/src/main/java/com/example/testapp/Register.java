@@ -71,7 +71,7 @@ public class Register extends AppCompatActivity {
                 String email=mEmail.getText().toString().trim();
                 String password=mPassword.getText().toString().trim();
                 String Username=mUsername.getText().toString().trim();
-                String phno=mPhone.getText().toString().trim();
+                String phone="+91"+mPhone.getText().toString().trim();
                 String prof=mProfession.getText().toString().trim();
                 if(TextUtils.isEmpty(Username))
                 {
@@ -122,7 +122,7 @@ public class Register extends AppCompatActivity {
                             Map<String,Object> user_data=new HashMap<>();
                             user_data.put("username",Username);
                             user_data.put("email",email);
-                            user_data.put("phno",phno);
+                            user_data.put("phno",phone);
                             user_data.put("profession",prof);
                             documentReference.set(user_data).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -130,7 +130,9 @@ public class Register extends AppCompatActivity {
                                     Log.d(TAG, "onSuccess: user profile is created for "+userID);
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            Intent phone2 = new Intent(getApplicationContext(),VerifyPhone.class);
+                            phone2.putExtra("phone",phone);
+                            startActivity(phone2);
                         }
                         else{
                             Toast.makeText(Register.this, "Error ! "+ task.getException().getMessage(), Toast.LENGTH_SHORT).show();
