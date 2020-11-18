@@ -156,6 +156,12 @@ public class VerifyPhone extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
             }
         });
+        firebaseAuth.getCurrentUser().linkWithCredential(credential).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(VerifyPhone.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }
