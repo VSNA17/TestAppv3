@@ -10,27 +10,27 @@
 
     <ImageButton
         android:id="@+id/Groceries"
-        android:src="@drawable/groceries"
         android:layout_width="125sp"
         android:layout_height="125sp"
+        android:src="@drawable/groceries"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintHorizontal_bias="0.199"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <ImageButton
         android:id="@+id/Appliances"
-        android:src="@drawable/appliances"
         android:layout_width="125sp"
         android:layout_height="125sp"
+        android:src="@drawable/appliances"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <ImageButton
         android:id="@+id/Stationery"
@@ -154,6 +154,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="24sp"
         app:layout_constraintVertical_bias="0.96" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

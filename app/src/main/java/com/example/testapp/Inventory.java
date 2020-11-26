@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Button;
 
 public class Inventory extends AppCompatActivity {
     private ImageButton gro;
@@ -13,11 +14,14 @@ public class Inventory extends AppCompatActivity {
     private ImageButton sta;
     private ImageButton fur;
     private ImageButton oth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
         getSupportActionBar().setTitle("Inventory");
+
         gro = (ImageButton) findViewById(R.id.Groceries);
         gro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +57,8 @@ public class Inventory extends AppCompatActivity {
                 openoth();
             }
         });
+
+
     }
     public void opengro(){
         Intent intent = new Intent(this, Groceries.class);
@@ -74,4 +80,6 @@ public class Inventory extends AppCompatActivity {
         Intent intent = new Intent(this,Others.class);
         startActivity(intent);
     }
+
+
 }

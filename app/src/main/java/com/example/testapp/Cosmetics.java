@@ -6,7 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -23,6 +27,10 @@ public class Cosmetics extends AppCompatActivity {
     private EAdapter adapter;
     private FloatingActionButton savebutton;
     private String asd;
+
+    private Button cosmetics_button;
+    private String search;
+    private EditText searchbar_cosmetics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +50,20 @@ public class Cosmetics extends AppCompatActivity {
 
         buildrecyclerview();
 
+        searchbar_cosmetics=findViewById(R.id.searchbar_cosmetics);
+        cosmetics_button=findViewById(R.id.cosmetics_button);
+
+        cosmetics_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                search= searchbar_cosmetics.getText().toString().toLowerCase();
+                Query query = cosmRef.document(asd).collection("cosRef").orderBy("title").startAt(search).endAt(search + "\uf8ff");
+                FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
+                adapter.updateOptions(options);
+
+            }
+        });
+
     }
 
     private void buildrecyclerview(){
@@ -54,6 +76,9 @@ public class Cosmetics extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+
+
 
     }
 
