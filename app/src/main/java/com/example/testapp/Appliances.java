@@ -56,7 +56,7 @@ public class Appliances extends AppCompatActivity {
         appliances_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search= searchbar_appliances.getText().toString().toLowerCase();
+                search= searchbar_appliances.getText().toString();
                 Query query = applRef.document(asd).collection("aplRef").orderBy("title").startAt(search).endAt(search + "\uf8ff");
                 FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
                 adapter.updateOptions(options);

@@ -56,7 +56,7 @@ public class Others_Groceries extends AppCompatActivity {
         others_groceries_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search= searchbar_other_groceries.getText().toString().toLowerCase();
+                search= searchbar_other_groceries.getText().toString();
                 Query query = othgroRef.document(asd).collection("othgroRef").orderBy("title").startAt(search).endAt(search + "\uf8ff");
                 FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
                 adapter.updateOptions(options);

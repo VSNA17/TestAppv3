@@ -56,7 +56,7 @@ public class Babycare extends AppCompatActivity {
         babycare_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search= searchbar_food.getText().toString().toLowerCase();
+                search= searchbar_food.getText().toString();
                 Query query = babcRef.document(asd).collection("bacRef").orderBy("title").startAt(search).endAt(search + "\uf8ff");
                 FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
                 adapter.updateOptions(options);

@@ -56,7 +56,7 @@ public class Utensils extends AppCompatActivity {
         utensils_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                search= searchbar_utensils.getText().toString().toLowerCase();
+                search= searchbar_utensils.getText().toString();
                 Query query = utnsRef.document(asd).collection("utsRef").orderBy("title").startAt(search).endAt(search + "\uf8ff");
                 FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
                 adapter.updateOptions(options);
