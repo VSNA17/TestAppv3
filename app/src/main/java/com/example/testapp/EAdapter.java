@@ -1,4 +1,6 @@
 package com.example.testapp;
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,8 +20,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHolder> {
 
-    public EAdapter(@NonNull FirestoreRecyclerOptions<Set_item> options) {
+    private OnItemClickListener listener;
+    public Context context;
+    public EAdapter(@NonNull FirestoreRecyclerOptions<Set_item> options, Context context) {
         super(options);
+        this.context=context;
     }
 
     class EViewHolder extends RecyclerView.ViewHolder{
@@ -30,7 +35,8 @@ public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHo
         private TextView quantity;
         private Button delete;
         private Button update;
-        private Button share;
+        public Button share;
+
         public EViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.fur);
@@ -56,7 +62,20 @@ public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHo
                 }
             });
 
+
+            share.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null) {
+                        listener.onItemClick(getSnapshots().getSnapshot(position), position);
+                    }
+                }
+            });
+
+
         }
+
     }
 
     @Override
@@ -81,7 +100,20 @@ public class EAdapter extends FirestoreRecyclerAdapter<Set_item,EAdapter.EViewHo
         getSnapshots().getSnapshot(position).getReference().update("initqty",str);
     }
 
+
+
+    public interface OnItemClickListener {
+        void onItemClick(DocumentSnapshot documentSnapshot, int position);
+    }
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
 }
+
+
+
+
 
 
 

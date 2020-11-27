@@ -72,14 +72,34 @@ public class Furniture extends AppCompatActivity{
         asd = fAuth.getCurrentUser().getUid();
         Query query = furnRef.document(asd).collection("furRef");
         FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
-        adapter = new EAdapter(options);
+        adapter = new EAdapter(options,this);
         RecyclerView recyclerView = findViewById(R.id.recviewfur);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        adapter.setOnItemClickListener(new EAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
+                Set_item note = documentSnapshot.toObject(Set_item.class);
+                shareitem(note);
+            }
+        });
 
 
+
+    }
+
+    private void shareitem(Set_item note) {
+        Intent myIntent= new Intent(Intent.ACTION_SEND);
+        myIntent.setType("text/plain");
+        String shareBody=note.getTitle();
+        String shareSub="FURNITURE ITEM SHARING";
+        myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+        String sharebody1=note.getInitqty();
+        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1);
+
+        startActivity(Intent.createChooser(myIntent,"Share using"));
     }
 
     @Override

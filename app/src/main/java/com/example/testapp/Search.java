@@ -44,7 +44,7 @@ public class Search extends AppCompatActivity {
         asd = fAuth.getCurrentUser().getUid();
         Query query = foodRef.document(asd).collection("foodRef");
         FirestoreRecyclerOptions<Set_item> options = new FirestoreRecyclerOptions.Builder<Set_item>().setQuery(query, Set_item.class).build();
-        adapter = new EAdapter(options);
+        adapter = new EAdapter(options,this);
         RecyclerView recyclerView = findViewById(R.id.searchrecview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
