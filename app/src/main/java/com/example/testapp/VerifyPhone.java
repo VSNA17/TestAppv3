@@ -154,6 +154,7 @@ public class VerifyPhone extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(VerifyPhone.this, "Acccount Created and Linked.", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
             }
         });
         firebaseAuth.getCurrentUser().linkWithCredential(credential).addOnFailureListener(new OnFailureListener() {

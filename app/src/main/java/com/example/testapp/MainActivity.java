@@ -2,12 +2,14 @@ package com.example.testapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     Button resendCode2;
-    Button devedit;
+    CardView devedit,todo;
     Button resetPassLocal,changeProfileImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
         fAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
         resendCode2=findViewById(R.id.resendCode);
-        devedit=findViewById(R.id.devedit);
+        devedit=findViewById(R.id.InventoryCard);
+        todo=findViewById(R.id.todo_id);
         devedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jumptoside();
+            }
+        });
+        todo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jump_todo();
             }
         });
         verifyMsg2=findViewById(R.id.verifyMsg);
@@ -75,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void jumptoside(){
         Intent intent = new Intent(MainActivity.this,Inventory.class);
+        startActivity(intent);
+    }
+    public void jump_todo(){
+        Intent intent = new Intent(MainActivity.this,MainActivityReminder.class);
         startActivity(intent);
     }
 }

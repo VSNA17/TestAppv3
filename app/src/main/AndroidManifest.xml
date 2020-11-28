@@ -11,7 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TestApp">
-        <activity android:name=".Search"></activity>
+        <activity android:name=".AddReminderActivity"
+            android:label="@string/title_activity_add_reminder"
+            android:parentActivityName=".MainActivityReminder"
+            android:theme="@style/Theme.AppCompat.Light">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivityReminder"
+                />
+        </activity>
+        <provider
+            android:name=".data.AlarmReminderProvider"
+            android:authorities="com.example.testapp"
+            android:exported="false" />
+
+        <service
+            android:name=".rem.ReminderAlarmService"
+            android:exported="false" />
+
+        <activity android:name=".MainActivityReminder" />
+        <activity android:name=".Search" />
         <activity android:name=".VerifyPhone" />
         <activity
             android:name=".NewItemOthersGroceries"
@@ -92,6 +112,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
