@@ -20,6 +20,7 @@ public class Inventory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inventory);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Inventory");
 
         gro = (ImageButton) findViewById(R.id.Groceries);

@@ -30,7 +30,8 @@
             android:name=".rem.ReminderAlarmService"
             android:exported="false" />
 
-        <activity android:name=".MainActivityReminder" />
+        <activity android:name=".MainActivityReminder"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".Search" />
         <activity android:name=".VerifyPhone" />
         <activity
@@ -90,7 +91,8 @@
         <activity
             android:name=".Groceries"
             android:parentActivityName=".Inventory" />
-        <activity android:name=".Inventory" />
+        <activity android:name=".Inventory"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Furniture"
             android:parentActivityName=".Inventory" />

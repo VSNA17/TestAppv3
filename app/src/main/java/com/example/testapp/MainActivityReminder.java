@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 import com.example.testapp.data.AlarmReminderContract;
 import com.example.testapp.data.AlarmReminderDbHelper;
-import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivityReminder extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -53,6 +53,8 @@ public class MainActivityReminder extends AppCompatActivity implements LoaderMan
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_reminder);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("To-do List");
 
         //mToolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(mToolbar);
