@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
 
 public class NewItemBabycare extends AppCompatActivity {
 
@@ -95,10 +96,30 @@ public class NewItemBabycare extends AppCompatActivity {
         }
 
         a = fAAuth.getCurrentUser().getUid();
-        CollectionReference dbbacRef = FirebaseFirestore.getInstance().collection("users");
-        dbbacRef.document(a).collection("bacRef").add(new Set_item(R.drawable.baby,title,"Quantity available:",initialquantity));
-        Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
-        finish();
+        if(newimguri!=null){
+            Toast.makeText(getApplicationContext(),"Uploading image", Toast.LENGTH_SHORT).show();
+            String imgname = System.currentTimeMillis()+".jpg";
+            FirebaseStorage.getInstance().getReference().child(imgname).putFile(newimguri)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()){
+                            FirebaseStorage.getInstance().getReference().child(imgname).getDownloadUrl().addOnSuccessListener(task2 -> {
+                                Toast.makeText(getApplicationContext(),"fetched url", Toast.LENGTH_SHORT).show();
+                                CollectionReference dbfoodRef = FirebaseFirestore.getInstance().collection("users");
+                                dbfoodRef.document(a).collection("bacRef").add(new Set_item(task2.toString(),title,"Qty available (kg):",initialquantity)).addOnSuccessListener(t2->{
+                                    Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
+                                    finish();
+                                });
+                            }) ;
+                        } else {
+                            Toast.makeText(getApplicationContext(),"failure while uploading image", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            CollectionReference dbfoodRef = FirebaseFirestore.getInstance().collection("users");
+            dbfoodRef.document(a).collection("bacRef").add(new Set_item("",title,"Qty available (kg):",initialquantity));
+            Toast.makeText(this, "Item added", Toast.LENGTH_SHORT).show();
+            finish();
+        }
     }
 
 }

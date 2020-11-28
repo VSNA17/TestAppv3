@@ -47,6 +47,7 @@ public class login_activity extends AppCompatActivity {
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
+                
                 fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -60,6 +61,7 @@ public class login_activity extends AppCompatActivity {
                     }
                 });
             }
+
         });
         mCreatebtn.setOnClickListener(new View.OnClickListener() {
             @Override

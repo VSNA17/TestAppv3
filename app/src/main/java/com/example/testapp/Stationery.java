@@ -98,7 +98,8 @@ public class Stationery extends AppCompatActivity {
         String shareSub="STATIONERY ITEM SHARING";
         myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
         String sharebody1=note.getInitqty();
-        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1);;
+        String img= note.getImgres();
+        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1+"\n"+ "image url: "+img);
 
         startActivity(Intent.createChooser(myIntent,"Share using"));
     }

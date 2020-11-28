@@ -97,7 +97,8 @@ public class Utensils extends AppCompatActivity {
         myIntent.setType("text/plain");
         String shareBody=note.getTitle();
         String sharebody1=note.getInitqty();
-        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1);
+        String img= note.getImgres();
+        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1+"\n"+ "image url: "+img);
         String shareSub="UTENSILS ITEM SHARING";
         myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
 
