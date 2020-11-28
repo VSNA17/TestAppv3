@@ -29,7 +29,7 @@ public class Babycare extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button babycare_button;
+    private FloatingActionButton babycare_button;
     private String search;
     private EditText searchbar_food;
 

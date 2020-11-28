@@ -30,7 +30,7 @@ public class Furniture extends AppCompatActivity{
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button furniture_button;
+    private FloatingActionButton furniture_button;
     private String search;
     private EditText searchbar_furniture;
 

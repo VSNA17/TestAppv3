@@ -29,7 +29,7 @@ public class Stationery extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button stationery_button;
+    private FloatingActionButton stationery_button;
     private String search;
     private EditText searchbar_stationery;
 

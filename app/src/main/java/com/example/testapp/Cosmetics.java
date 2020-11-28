@@ -29,7 +29,7 @@ public class Cosmetics extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button cosmetics_button;
+    private FloatingActionButton cosmetics_button;
     private String search;
     private EditText searchbar_cosmetics;
 

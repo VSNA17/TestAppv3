@@ -29,7 +29,7 @@ public class Others_Groceries extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button others_groceries_button;
+    private FloatingActionButton others_groceries_button;
     private String search;
     private EditText searchbar_other_groceries;
 

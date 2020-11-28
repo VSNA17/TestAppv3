@@ -32,7 +32,7 @@ public class Appliances extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button appliances_button;
+    private FloatingActionButton appliances_button;
     private String search;
     private EditText searchbar_appliances;
 

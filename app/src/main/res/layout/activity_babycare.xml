@@ -28,11 +28,7 @@
             android:drawableLeft="@android:drawable/ic_menu_search"
             android:id="@+id/searchbar_babycare"
             />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:drawable/ic_menu_search"
-            android:id="@+id/babycare_button"/>
+
 
 
 
@@ -62,6 +58,16 @@
 
 
     </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/babycare_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription=""
+        android:layout_marginTop="10dp"
+        android:src="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 

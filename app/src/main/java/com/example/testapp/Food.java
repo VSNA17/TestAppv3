@@ -31,7 +31,7 @@ public class Food extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button food_button;
+    private FloatingActionButton food_button;
     private String search;
     private EditText searchbar_food;
 

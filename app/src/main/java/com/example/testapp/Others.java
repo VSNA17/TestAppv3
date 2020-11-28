@@ -29,7 +29,7 @@ public class Others extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button others_button;
+    private FloatingActionButton others_button;
     private String search;
     private EditText searchbar_others;
 

@@ -29,7 +29,7 @@ public class Cleaning extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button cleaning_button;
+    private FloatingActionButton cleaning_button;
     private String search;
     private EditText searchbar_cleaning;
 

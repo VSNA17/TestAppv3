@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Food"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".Food">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,49 +22,40 @@
                 android:id="@+id/searchbar_food"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:hint="SearchBar                                             "
-                android:drawableStart="@android:drawable/ic_menu_search"
-                android:inputType="textAutoComplete"
                 android:layout_margin="12dp"
+                android:autofillHints=""
+                android:drawableStart="@android:drawable/ic_menu_search"
                 android:drawableLeft="@android:drawable/ic_menu_search"
-                android:autofillHints="" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:drawable/ic_menu_search"
-                android:id="@+id/food_button"/>
-
-
-
+                android:hint="SearchBar                                         "
+                android:inputType="textAutoComplete" />
 
 
         </LinearLayout>
-
-
-
-
-
-
 
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recviewfood"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
+            android:background="@drawable/home"
             android:padding="9sp"
-            android:background="@drawable/home">
+            android:scrollbars="vertical">
 
         </androidx.recyclerview.widget.RecyclerView>
 
 
-
     </LinearLayout>
 
-
-
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/food_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription=""
+        android:layout_marginTop="10dp"
+        android:src="@android:drawable/ic_menu_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -78,9 +69,7 @@
         android:contentDescription=""
         android:src="@drawable/ic_baseline_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

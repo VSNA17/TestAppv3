@@ -29,7 +29,7 @@ public class Utensils extends AppCompatActivity {
     private FloatingActionButton savebutton;
     private String asd;
 
-    private Button utensils_button;
+    private FloatingActionButton utensils_button;
     private String search;
     private EditText searchbar_utensils;
 
