@@ -37,6 +37,7 @@ public class VerifyPhone extends AppCompatActivity {
     private PhoneAuthProvider.ForceResendingToken token;
     private String verificationId;
     private String  phone;
+    String s="Incorrect OTP";
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,6 @@ public class VerifyPhone extends AppCompatActivity {
 
         Intent data = getIntent();
         phone = data.getStringExtra("phone");
-
         firebaseAuth = FirebaseAuth.getInstance();
 
         otpNumberOne = findViewById(R.id.otpNumberOne);
@@ -154,13 +154,14 @@ public class VerifyPhone extends AppCompatActivity {
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(VerifyPhone.this, "Acccount Created and Linked.", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                s="Correct OTP";
                 finish();
             }
         });
         firebaseAuth.getCurrentUser().linkWithCredential(credential).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(VerifyPhone.this, "Incorrect OTP", Toast.LENGTH_SHORT).show();
+                Toast.makeText(VerifyPhone.this, s, Toast.LENGTH_SHORT).show();
             }
         });
     }
