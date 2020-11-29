@@ -18,7 +18,7 @@
         android:autofillHints=""
         android:background="@color/white"
         android:ems="10"
-        android:hint="@string/username"
+        android:hint="Email id"
         android:inputType="textPersonName"
         android:padding="10dp"
         android:textColor="#000000"
@@ -57,7 +57,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
+        android:fontFamily="@font/cinzel_decorative_bold"
         android:text="Quick Track"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
@@ -69,8 +69,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.096"
-        tools:fontFamily="@font/cinzel_decorative_bold" />
+        app:layout_constraintVertical_bias="0.096"/>
 
     <TextView
         android:id="@+id/textView2"
