@@ -108,7 +108,7 @@ public class Food extends AppCompatActivity {
         myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
         String sharebody1=note.getInitqty();
         String img= note.getImgres();
-        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1+"\n"+ "image url: "+img);
+        myIntent.putExtra(Intent.EXTRA_TEXT,"Item Name: "+shareBody+"\n"+ "Available Quantity: "+sharebody1+"\n"+ "image url: "+"\n"+img);
 
         startActivity(Intent.createChooser(myIntent,"Share using"));
     }

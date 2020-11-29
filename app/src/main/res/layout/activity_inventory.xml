@@ -34,9 +34,9 @@
 
     <ImageButton
         android:id="@+id/Stationery"
-        android:src="@drawable/stationery"
         android:layout_width="125sp"
         android:layout_height="125sp"
+        android:src="@drawable/stationery"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
@@ -46,9 +46,9 @@
 
     <ImageButton
         android:id="@+id/Furniture"
-        android:src="@drawable/furniture"
         android:layout_width="125sp"
         android:layout_height="125sp"
+        android:src="@drawable/furniture"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.8"
@@ -60,8 +60,8 @@
         android:id="@+id/Disp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select a category:"
         android:fontFamily="@font/amaranth_bold"
+        android:text="Select a category:"
         android:textColor="#000000"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -82,8 +82,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.265"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@id/Groceries"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.405" />
 
     <TextView
@@ -115,6 +115,7 @@
         app:layout_constraintTop_toBottomOf="@id/Appliances"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".685" />
+
     <TextView
         android:id="@+id/Fur"
         android:layout_width="wrap_content"
@@ -137,9 +138,10 @@
         android:src="@drawable/shopping"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.871" />
 
     <TextView
         android:id="@+id/Oth"
@@ -147,15 +149,36 @@
         android:layout_height="wrap_content"
         android:text="Others"
         android:textColor="#000000"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.961" />
+
+    <ImageButton
+        android:id="@+id/maps"
+        android:layout_width="125sp"
+        android:layout_height="125sp"
+        android:src="@drawable/gmaps"
+        app:layout_constraintBottom_toBottomOf="@+id/Others"
+        app:layout_constraintEnd_toEndOf="@+id/Furniture"
+        app:layout_constraintStart_toStartOf="@+id/Furniture"
+        app:layout_constraintTop_toTopOf="@+id/Others"></ImageButton>
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Google Maps"
+        android:textColor="#000000"
         android:textSize="24sp"
-        app:layout_constraintVertical_bias="0.96" />
-
-
+        app:layout_constraintBottom_toBottomOf="@+id/Oth"
+        app:layout_constraintEnd_toEndOf="@+id/maps"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/maps"
+        app:layout_constraintTop_toTopOf="@+id/Oth" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

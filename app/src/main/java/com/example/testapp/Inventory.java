@@ -3,6 +3,7 @@ package com.example.testapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -14,6 +15,7 @@ public class Inventory extends AppCompatActivity {
     private ImageButton sta;
     private ImageButton fur;
     private ImageButton oth;
+    private ImageButton maps;
 
 
     @Override
@@ -22,6 +24,14 @@ public class Inventory extends AppCompatActivity {
         setContentView(R.layout.activity_inventory);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Inventory");
+
+        maps=(ImageButton) findViewById(R.id.maps);
+        maps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opengmaps();
+            }
+        });
 
         gro = (ImageButton) findViewById(R.id.Groceries);
         gro.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +70,7 @@ public class Inventory extends AppCompatActivity {
         });
 
 
+
     }
     public void opengro(){
         Intent intent = new Intent(this, Groceries.class);
@@ -80,6 +91,12 @@ public class Inventory extends AppCompatActivity {
     public void openoth(){
         Intent intent = new Intent(this,Others.class);
         startActivity(intent);
+    }
+    public void opengmaps(){
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("geo:27.2046,77.4977"));
+        Intent chooser= Intent.createChooser(intent,"Launch Maps");
+        startActivity(chooser);
     }
 
 
