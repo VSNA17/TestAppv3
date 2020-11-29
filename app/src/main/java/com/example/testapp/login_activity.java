@@ -29,7 +29,7 @@ public class login_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_activity);
-
+        getSupportActionBar().setTitle("Login");
         mEmail = findViewById(R.id.username);
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar2);
